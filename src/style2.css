@@ -1,0 +1,118 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.top {
+  height: 100vh;
+  background: url("https://picsum.photos/id/1021/1920/1200") no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.top_title {
+  font-size: 10rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+
+  & .top_title_innerLeft,
+  & .top_title_innerRight {
+    display: inline-block;
+  }
+}
+
+.section {
+  padding: 80px 50px;
+  min-height: 150vh;
+}
+.article {
+  & .article_img {
+    width: 70%;
+    border: 10px solid #fff;
+    border-radius: 10px;
+  }
+  & .article_text {
+    position: relative;
+    z-index: 2;
+    width: 40%;
+    margin-left: auto;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+  }
+}
+
+.cardSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.cards_wrapper {
+  max-width: 100%;
+  padding-inline: 50px;
+  overflow: hidden;
+}
+.cards {
+  display: inline-flex;
+  gap: 150px;
+}
+.singleCard {
+  position: relative;
+  & .singleCard_image {
+    width: 25vw;
+  }
+  & .singleCard_text {
+    position: absolute;
+    bottom: 10px;
+    right: -8%;
+    margin: 0;
+    font-size: 6rem;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}

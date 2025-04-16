@@ -1,14 +1,10 @@
 import gsap from "gsap";
 import "./style4.css";
 import "remixicon/fonts/remixicon.css";
-import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
 
 // MotionPathPlugin
 gsap.registerPlugin(MotionPathPlugin);
-
-const initialPath = `M 10 80 Q 250 10 490 80`;
-const finalPath = `M 10 100 Q 250 100 490 100`;
 
 const string = document.querySelector("#string") as HTMLElement;
 
@@ -83,7 +79,6 @@ gsap.from(".txt span", {
 //
 const menu_dur = 3;
 const menu_btn_anim = gsap.timeline({ defaults: { duration: menu_dur } });
-const menu_btn = document.querySelector(".menu_button") as HTMLElement;
 menu_btn_anim
   .to(
     "#x_left",

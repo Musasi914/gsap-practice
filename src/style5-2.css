@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "Bandeins Sans & Strange Variable";
+  src: url("https://res.cloudinary.com/dldmpwpcp/raw/upload/v1566406079/BandeinsStrangeVariable_esetvq.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+figure {
+  margin: 0;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+body {
+  background: #7b5fd5;
+  color: #ffffff;
+}
+
+.slide {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.slide:nth-of-type(1) {
+  visibility: visible;
+  .slide__wrapper {
+    background: #595e72;
+  }
+}
+.slide:nth-of-type(2) {
+  visibility: visible;
+  .slide__wrapper {
+    background: #546e5c;
+  }
+}
+.slide:nth-of-type(3) {
+  visibility: visible;
+  .slide__wrapper {
+    background: #73695b;
+  }
+}
+.slide:nth-of-type(4) {
+  visibility: visible;
+  .slide__wrapper {
+    background: #705567;
+  }
+}
+
+.slide__inner,
+.slide__outer {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+.slide__wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.slide__container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  width: min(100%, 1400px);
+  height: 80svh;
+  margin-top: 10svh;
+  padding-inline: 5%;
+}
+
+.slide__heading {
+  --width: 200;
+  position: relative;
+  z-index: 1;
+  grid-area: 1/1/5/9;
+  margin: 0;
+  padding: 0;
+  mix-blend-mode: difference;
+  font-size: clamp(5rem, 15vw, 15rem);
+  font-family: "Bandeins Sans & Strange Variable", sans-serif;
+  text-transform: uppercase;
+  font-variation-settings: "wdth" var(--width);
+}
+
+.slide__img-cont {
+  grid-area: 3/2/8/8;
+  margin-top: 1rem;
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2% 5%;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.counter {
+  position: fixed;
+  z-index: 10;
+  color: #c6c6c6;
+  top: 50%;
+  right: 5%;
+  font-size: clamp(5rem, 15vw, 15rem);
+  font-family: "Bandeins Sans & Strange Variable", sans-serif;
+  overflow: hidden;
+}
+.counter__inner {
+  width: 2em;
+}
+.counter__num {
+  position: absolute;
+  width: 1em;
+  display: inline-block;
+}

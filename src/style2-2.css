@@ -1,0 +1,113 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+main {
+  & > * + * {
+    margin-top: var(--main-mt, 10rem);
+  }
+}
+.top {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+.top__inner {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: url("https://fastly.picsum.photos/id/33/5000/3333.jpg?hmac=h5NVRcUXmsWm612YQOroHSA5n9R7gxZgoP60LHBPHtw") center / cover
+    no-repeat;
+}
+.top__title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10vw;
+}
+.top__word {
+  display: inline-block;
+}
+
+.media {
+  width: min(94%, 1200px);
+  margin-inline: auto;
+  padding-block: 80px;
+  min-height: 150vh;
+}
+
+.media__imgWrapper {
+  width: 70%;
+  aspect-ratio: 4 / 3;
+  border: 5px solid white;
+  border-radius: 4px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.media__textWrapper {
+  position: relative;
+  width: 40%;
+  margin-left: auto;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem 2rem;
+}
+
+.cards {
+  width: 100%;
+  margin-inline: auto;
+  overflow-x: hidden;
+}
+
+.cards__inner {
+  height: 100vh;
+  display: inline-flex;
+  align-items: center;
+  gap: 16vw;
+  padding-inline: 10vw;
+}
+
+.card__imgWrapper {
+  img {
+    object-fit: cover;
+  }
+}
+
+.card {
+  position: relative;
+}
+.card__num {
+  position: absolute;
+  font-size: 4rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  bottom: 0;
+  right: -0.5em;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
+}

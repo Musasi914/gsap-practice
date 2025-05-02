@@ -3,97 +3,169 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+      }
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      figure,
+      blockquote,
+      dl,
+      dd {
+        margin: 0;
+      }
+      ul[role="list"],
+      ol[role="list"] {
+        list-style: none;
+      }
+      body {
+        min-height: 100vh;
+        line-height: 1.5;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      button,
+      input,
+      label {
+        line-height: 1.1;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        text-wrap: balance;
+      }
+      a:not([class]) {
+        text-decoration-skip-ink: auto;
+        color: currentColor;
+      }
+      img,
+      picture {
+        max-width: 100%;
+        display: block;
+      }
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+      textarea:not([rows]) {
+        min-height: 10em;
+      }
+      :target {
+        scroll-margin-block: 5ex;
+      }
+    </style>
+    <link rel="stylesheet" href="./src/design.css" />
+    <script type="module" src="./src/design.ts"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="./src/style5-2.css" />
-    <script type="module" src="./src/main5-2.ts"></script>
   </head>
   <body>
+    <div class="cursor"></div>
+    <h1 class="top__title">
+      <span class="top__word"><span class="rect"></span>Welcome</span><br />
+      <span class="top__word"><span class="rect"></span>TestPage</span>
+    </h1>
+    <section class="top__scroll">
+      <p class="top__scroll-text">scroll</p>
+    </section>
     <main>
-      <section class="slide">
-        <div class="slide__outer">
-          <div class="slide__inner">
-            <div class="slide__wrapper">
-              <div class="slide__container">
-                <h2 class="slide__heading">make</h2>
-                <div class="slide__img-cont">
-                  <img
-                    src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMyMDUzOA&ixlib=rb-1.2.1&q=80&w=400"
-                    alt=""
-                    class="slide__img"
-                  />
-                </div>
-              </div>
-            </div>
+      <section class="section2">
+        <p class="section2__text">
+          <span class="section2__word"><span class="section2__block"></span>Lorem ipsum </span><br /><span class="section2__word"
+            ><span class="section2__block"></span>dolor sit amet</span
+          >
+        </p>
+      </section>
+      <section class="horizonal">
+        <div class="horizonal__inner">
+          <ul class="horizonal__images">
+            <li>
+              <img
+                width="600"
+                height="400"
+                class="horizonal__image"
+                src="https://fastly.picsum.photos/id/71/5000/3333.jpg?hmac=wBjyqoAke0uv6bTtbbIby9s-VTQ52gIkI-QVXWS3W0I"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                width="600"
+                height="400"
+                class="horizonal__image"
+                src="https://fastly.picsum.photos/id/69/4912/3264.jpg?hmac=Q08LW3SoOxPfaE-y8-braexxvm5PESXMCdEDqFbEhQ8"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                width="600"
+                height="400"
+                class="horizonal__image"
+                src="https://fastly.picsum.photos/id/74/4288/2848.jpg?hmac=q02MzzHG23nkhJYRXR-_RgKTr6fpfwRgcXgE0EKvNB8"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                width="600"
+                height="400"
+                class="horizonal__image"
+                src="https://fastly.picsum.photos/id/77/1631/1102.jpg?hmac=sg0ArFCRjP1wlUg8vszg5RFfGiXZJkWEtqLLCRraeBw"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="about">
+        <div class="about__inner">
+          <h2 class="about__title">About</h2>
+          <p class="about__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit repellendus repudiandae est fugiat consequuntur qui, minima quis.
+          </p>
+          <div class="about__imgWrapper">
+            <img
+              src="https://fastly.picsum.photos/id/76/4912/3264.jpg?hmac=VkFcSa2Rbv0R0ndYnz_FAmw02ON1pPVjuF_iVKbiiV8"
+              alt=""
+              width="800"
+              height="600"
+            />
           </div>
         </div>
       </section>
-      <section class="slide">
-        <div class="slide__outer">
-          <div class="slide__inner">
-            <div class="slide__wrapper">
-              <div class="slide__container">
-                <h2 class="slide__heading">impossible</h2>
-                <div class="slide__img-cont">
-                  <img
-                    src="https://images.unsplash.com/photo-1558603668-6570496b66f8?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMyMDUzOA&ixlib=rb-1.2.1&q=85&w=400"
-                    alt=""
-                    class="slide__img"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+      <section class="flip">
+        <button class="flip__button">Swop Element Positions</button>
+        <div class="flip__container">
+          <div class="flip__box flip__box--blue" id="sq1">1</div>
+          <div class="flip__box flip__box--pink" id="sq2">2</div>
         </div>
       </section>
-      <section class="slide">
-        <div class="slide__outer">
-          <div class="slide__inner">
-            <div class="slide__wrapper">
-              <div class="slide__container">
-                <h2 class="slide__heading">possible</h2>
-                <div class="slide__img-cont">
-                  <img
-                    src="https://images.unsplash.com/photo-1537165924986-cc3568f5d454?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMyMDU4NA&ixlib=rb-1.2.1&q=85&w=400"
-                    alt=""
-                    class="slide__img"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+      <section class="flip2">
+        <div class="initial">
+          <img class="thumbnail" data-flip-id="img" src="https://assets.codepen.io/16327/flip-flair.png" />
+        </div>
+
+        <div class="container">
+          <img class="full-size" data-flip-id="img" src="https://assets.codepen.io/16327/massive-flip-flair.png" />
         </div>
       </section>
-      <section class="slide">
-        <div class="slide__outer">
-          <div class="slide__inner">
-            <div class="slide__wrapper">
-              <div class="slide__container">
-                <h2 class="slide__heading">scroll</h2>
-                <div class="slide__img-cont">
-                  <img
-                    src="https://images.unsplash.com/photo-1589271243958-d61e12b61b97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0NjMyMDU4NA&ixlib=rb-1.2.1&q=80&w=400"
-                    alt=""
-                    class="slide__img"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="counter">
-        <div class="counter__inner">
-          0
-          <span class="counter__num">1</span>
-          <span class="counter__num">2</span>
-          <span class="counter__num">3</span>
-          <span class="counter__num">4</span>
-        </div>
-      </div>
     </main>
-    <footer>
-      <a href="https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.observe()">ScrollTrigger.observe()</a>
-      <p>GSAP demo</p>
-    </footer>
   </body>
 </html>

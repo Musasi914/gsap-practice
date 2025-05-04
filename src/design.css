@@ -193,3 +193,59 @@ main {
     background: rgb(242, 102, 126);
   }
 }
+
+.flip2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+.flip2__container {
+  position: fixed;
+  inset: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 999;
+}
+.flip2__full-size {
+  position: relative;
+  flex: 0 0;
+  /* height: 80%; */
+  aspect-ratio: 1 / 1;
+  display: none;
+
+  &.active {
+    display: block;
+    z-index: 2;
+  }
+}
+
+.flip2__initial {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border: 2px dashed white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.flip2__thumbnail {
+  width: 150px;
+  height: 150px;
+  visibility: visible;
+
+  &.active {
+    visibility: hidden;
+  }
+  &.flipping {
+    visibility: visible;
+  }
+}

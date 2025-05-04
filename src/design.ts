@@ -1,7 +1,9 @@
 import gsap from "gsap";
+import { Draggable } from "gsap/Draggable";
 import { Flip } from "gsap/Flip";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger, Flip);
+
+gsap.registerPlugin(ScrollTrigger, Flip, Draggable);
 
 function splitText(className: string) {
   const targetNodes = document.querySelectorAll(className);
@@ -150,5 +152,30 @@ function splitText(className: string) {
     const state = Flip.getState(".flip__box");
     flipPinkBtn.classList.toggle("orderd");
     Flip.from(state, { duration: 2 });
+  });
+}
+
+{
+  // flip2
+  const fullSize = document.querySelector(".flip2__full-size") as HTMLElement;
+  const thumbnail = document.querySelector(".flip2__thumbnail") as HTMLElement;
+  const flip2 = document.querySelector(".flip2") as HTMLElement;
+
+  Draggable.create(".flip2__initial", {
+    bounds: ".flip2",
+  });
+
+  flip2.addEventListener("click", () => {
+    const state = Flip.getState(".flip2__full-size, .flip2__thumbnail");
+
+    fullSize.classList.toggle("active");
+    thumbnail.classList.toggle("active");
+
+    Flip.from(state, {
+      duration: 0.6,
+      fade: true,
+      absolute: true,
+      toggleClass: "flipping",
+    });
   });
 }

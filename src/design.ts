@@ -1,9 +1,10 @@
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 import { Flip } from "gsap/Flip";
+import InertiaPlugin from "gsap/InertiaPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger, Flip, Draggable);
+gsap.registerPlugin(ScrollTrigger, Flip, Draggable, InertiaPlugin);
 
 function splitText(className: string) {
   const targetNodes = document.querySelectorAll(className);
@@ -41,7 +42,7 @@ function splitText(className: string) {
       ease: "power4.out",
       delay: i * 0.2,
     });
-    tl.from(word, { opacity: 0, y: 20, duration: 0.75 }).to(rect, { xPercent: 100, duration: 0.5 }, "-=50%");
+    tl.from(word, { opacity: 0, y: 20, duration: 0.75 }).to(rect, { xPercent: 120, duration: 0.5 }, "-=50%");
   });
   // gsap.
 }
@@ -63,9 +64,10 @@ function splitText(className: string) {
     scrollTrigger: {
       trigger: ".horizonal",
       start: "center center",
-      end: "+=1300",
+      end: "+=1000",
       scrub: 1,
       pin: true,
+      anticipatePin: 1,
     },
   });
 }
@@ -177,5 +179,112 @@ function splitText(className: string) {
       absolute: true,
       toggleClass: "flipping",
     });
+  });
+}
+
+{
+  // flip3
+  const container = document.querySelector(".flip3__container") as HTMLElement;
+  const imgSrc1 = "https://picsum.photos/300/300?random=1";
+  const imgSrc2 = "https://picsum.photos/300/300?random=2";
+  let tiles: HTMLDivElement[] = [];
+  let currentImage = imgSrc1;
+
+  // タイルを作成
+  for (let row = 0; row < 8; row++) {
+    for (let col = 0; col < 8; col++) {
+      let tile = document.createElement("div");
+      tile.classList.add("tile");
+      tile.style.left = `${col * 12.5}%`;
+      tile.style.top = `${row * 12.5}%`;
+      tile.style.backgroundImage = `url(${currentImage})`;
+      tile.style.backgroundPosition = `${-col * 37.5}px ${-row * 37.5}px`;
+      container.appendChild(tile);
+      tiles.push(tile);
+    }
+  }
+
+  function switchImage() {
+    let newImage = currentImage === imgSrc1 ? imgSrc2 : imgSrc1;
+    gsap.to(tiles, {
+      duration: 0.6,
+      rotateY: 90,
+      opacity: 0,
+      stagger: {
+        amount: 1.5,
+        grid: [8, 8],
+        from: "start",
+      },
+      onComplete: () => {
+        tiles.forEach((tile) => {
+          tile.style.backgroundImage = `url(${newImage})`;
+        });
+        gsap.to(tiles, { opacity: 1, rotateY: 0, duration: 0.6, stagger: { amount: 1.5, grid: [8, 8], from: "start" } });
+      },
+    });
+    currentImage = newImage;
+  }
+
+  setInterval(switchImage, 6000);
+}
+
+{
+  // neumorphic
+  document.querySelectorAll(".neumorphic__card").forEach((card) => {
+    (card as HTMLElement).addEventListener("mousemove", (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      const rotateX = (y / rect.height) * -30;
+      const rotateY = (x / rect.width) * 30;
+
+      const target = e.target as HTMLElement;
+      (target.parentNode as HTMLElement).style.zIndex = "1";
+
+      gsap.to(card, {
+        rotationX: rotateX,
+        rotationY: rotateY,
+        scale: 1.2,
+        duration: 0.25,
+        boxShadow: "10px 10px 30px rgba(0, 0, 0, 0.5)",
+        ease: "power2.out",
+      });
+    });
+
+    (card as HTMLElement).addEventListener("mouseleave", (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      (target.parentNode as HTMLElement).style.zIndex = "0";
+      gsap.to(card, {
+        rotationX: 0,
+        rotationY: 0,
+        scale: 1,
+        boxShadow: "inset 5px 5px 15px rgba(255, 255, 255, 0.1), inset -5px -5px 15px rgba(0, 0, 0, 0.3), 5px 5px 15px rgba(0, 0, 0, 0.4)",
+        duration: 0.6,
+        ease: "power2.out",
+      });
+    });
+  });
+}
+
+{
+  // drag
+  // const items = gsap.utils.toArray(".drag__item") as HTMLElement[];
+  // const panel = document.querySelector(".drag__body") as HTMLElement;
+  const cards = document.querySelector(".drag__list") as HTMLElement;
+  const item = document.querySelector(".drag__item") as HTMLElement;
+  // const spacer = document.createElement("div");
+
+  Draggable.create(cards, {
+    type: "x",
+    edgeResistance: 0.5,
+    inertia: true,
+    bounds: {
+      minX: -cards.offsetWidth + window.innerWidth - 40,
+      maxX: 0,
+    },
+    snap: function (endValue) {
+      return Math.round(endValue / item.offsetWidth) * item.offsetWidth; // Example: snapping to the nearest integer
+    },
   });
 }

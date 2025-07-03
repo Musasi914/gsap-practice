@@ -249,3 +249,99 @@ main {
     visibility: visible;
   }
 }
+
+.flip3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.flip3__container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: (8, 1fr);
+  perspective: 1000px;
+}
+.flip3__tile {
+  position: absolute;
+  width: 12.5%;
+  height: 12.5%;
+  background-size: 300px 300px;
+  background-position: center;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.flip3__tile.flipped {
+  transform: rotateY(180deg);
+}
+
+.neumorphic {
+  overflow: hidden;
+}
+.neumorphic__grid {
+  width: min(96%, 800px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  padding-block: 5rem;
+  perspective: 1000px;
+}
+.neumorphic__card {
+  position: relative;
+  aspect-ratio: 180 / 250;
+  box-shadow: inset 5px 5px 15px rgba(255, 255, 255, 0.1), inset -5px -5px 15px rgba(0, 0, 0, 0.3), 5px 5px 15px rgba(0, 0, 0, 0.4);
+
+  img {
+    width: 100%;
+  }
+}
+
+.drag {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.drag__body {
+  position: relative;
+}
+.drag__list {
+  display: inline-flex;
+  gap: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 20px;
+}
+.drag__item {
+  position: relative;
+  width: min(30vw, 300px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(225, 225, 225);
+  border-radius: 10px;
+  aspect-ratio: 249 / 304;
+}
+.drag__item-img {
+  position: absolute;
+  display: block;
+  bottom: 100px;
+  min-width: 100%;
+  height: auto;
+}
+.drag__item-desc {
+  position: absolute;
+  bottom: 0;
+  color: #0d1115;
+
+  & > * {
+    margin-bottom: 0.5rem;
+  }
+}

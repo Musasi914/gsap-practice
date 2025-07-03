@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import "./style4.css";
+import "./css/style4.css";
 import "remixicon/fonts/remixicon.css";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
 

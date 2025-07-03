@@ -1,0 +1,33 @@
+.sec2 {
+  height: 100vh;
+}
+.jumbotron {
+  height: 100vh;
+}
+.jumbotron__container {
+  position: relative;
+  /* width: 300px;
+  height: 300px; */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920 / 1280;
+  perspective: 500px;
+  /* display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr); */
+}
+.jumbotron__tile {
+  position: absolute;
+  width: calc(100% / 8);
+  aspect-ratio: 1920 / 1280;
+  /* background-size: 300px 300px; */
+  background-position: center;
+}
+.jumbotron__barCon {
+  width: min(96%, 800px);
+  margin-top: 20px;
+  margin-inline: auto;
+}
+.jumbotron__bar {
+  width: 100%;
+}

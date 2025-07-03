@@ -3,75 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-      html {
-        -moz-text-size-adjust: none;
-        -webkit-text-size-adjust: none;
-        text-size-adjust: none;
-      }
-      body,
-      h1,
-      h2,
-      h3,
-      h4,
-      p,
-      figure,
-      blockquote,
-      dl,
-      dd {
-        margin: 0;
-      }
-      ul[role="list"],
-      ol[role="list"] {
-        list-style: none;
-      }
-      body {
-        min-height: 100vh;
-        line-height: 1.5;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      button,
-      input,
-      label {
-        line-height: 1.1;
-      }
-      h1,
-      h2,
-      h3,
-      h4 {
-        text-wrap: balance;
-      }
-      a:not([class]) {
-        text-decoration-skip-ink: auto;
-        color: currentColor;
-      }
-      img,
-      picture {
-        max-width: 100%;
-        display: block;
-      }
-      input,
-      button,
-      textarea,
-      select {
-        font: inherit;
-      }
-      textarea:not([rows]) {
-        min-height: 10em;
-      }
-      :target {
-        scroll-margin-block: 5ex;
-      }
-    </style>
-    <link rel="stylesheet" href="./src/design.css" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/design.css" />
     <script type="module" src="./src/design.ts"></script>
     <title>Document</title>
   </head>
@@ -164,6 +97,67 @@
 
         <div class="flip2__container">
           <img class="flip2__full-size" data-flip-id="img" src="https://assets.codepen.io/16327/massive-flip-flair.png" />
+        </div>
+      </section>
+      <section class="flip3">
+        <div class="flip3__container"></div>
+      </section>
+      <section class="neumorphic">
+        <div class="neumorphic__grid">
+          <div class="neumorphic__card"><img src="https://picsum.photos/180/250?random=1" alt="" /></div>
+          <div class="neumorphic__card"><img src="https://picsum.photos/180/250?random=2" alt="" /></div>
+          <div class="neumorphic__card"><img src="https://picsum.photos/180/250?random=3" alt="" /></div>
+          <div class="neumorphic__card"><img src="https://picsum.photos/180/250?random=4" alt="" /></div>
+          <div class="neumorphic__card"><img src="https://picsum.photos/180/250?random=5" alt="" /></div>
+          <div class="neumorphic__card"><img src="https://picsum.photos/180/250?random=6" alt="" /></div>
+        </div>
+      </section>
+      <section class="drag">
+        <div class="drag__body">
+          <ul class="drag__list">
+            <li class="drag__item">
+              <img src="https://i.postimg.cc/qq3g4kRK/h1.png" alt="" class="drag__item-img" />
+              <div class="drag__item-desc">
+                <h3>lorem ipsum</h3>
+                <p>$ 40.00</p>
+              </div>
+            </li>
+            <li class="drag__item">
+              <img src="https://i.postimg.cc/7LKVjyfD/h2.png" alt="" class="drag__item-img" />
+              <div class="drag__item-desc">
+                <h3>lorem ipsum</h3>
+                <p>$ 40.00</p>
+              </div>
+            </li>
+            <li class="drag__item">
+              <img src="https://i.postimg.cc/3J2ZYGdt/h3.png" alt="" class="drag__item-img" />
+              <div class="drag__item-desc">
+                <h3>lorem ipsum</h3>
+                <p>$ 40.00</p>
+              </div>
+            </li>
+            <li class="drag__item">
+              <img src="https://i.postimg.cc/jj1fzqDW/h4.png" alt="" class="drag__item-img" />
+              <div class="drag__item-desc">
+                <h3>lorem ipsum</h3>
+                <p>$ 40.00</p>
+              </div>
+            </li>
+            <li class="drag__item">
+              <img src="https://i.postimg.cc/5NfXQQs7/h5.png" alt="" class="drag__item-img" />
+              <div class="drag__item-desc">
+                <h3>lorem ipsum</h3>
+                <p>$ 40.00</p>
+              </div>
+            </li>
+            <li class="drag__item">
+              <img src="https://i.postimg.cc/50qxfnWx/h6.png" alt="" class="drag__item-img" />
+              <div class="drag__item-desc">
+                <h3>lorem ipsum</h3>
+                <p>$ 40.00</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </main>

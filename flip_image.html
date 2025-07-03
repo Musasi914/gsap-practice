@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="view1.jpg" as="image" />
+    <link rel="preload" href="view2.jpg" as="image" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/flip_image.css" />
+    <script type="module" src="./src/flipImage.ts"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="jumbotron">
+      <div class="jumbotron__container"></div>
+      <div class="jumbotron__barCon">
+        <p>perspective: <span class="jumbotron__perspectiveCounter">500</span>px</p>
+        <input type="range" name="perspective" class="jumbotron__bar" min="10" max="1000" />
+      </div>
+    </section>
+    <section class="sec2"></section>
+  </body>
+</html>

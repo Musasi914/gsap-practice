@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <style>
+      .sec1 {
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: gainsboro;
+      }
+      .sec1__headline {
+        font-size: 4vw;
+      }
+      .sec1__button {
+        display: block;
+        margin-top: 2rem;
+      }
+      .char {
+        border: 1px solid #000;
+      }
+    </style>
+    <script type="module" src="./src/splitText.ts"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="sec1">
+      <h1 class="sec1__headline">This text animates and then reverts</h1>
+      <button class="sec1__button">animate me</button>
+    </section>
+  </body>
+</html>

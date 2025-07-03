@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="練習します" />
+    <meta name="author" content="名無し" />
+    <meta name="color-scheme" content="light" />
+
+    <meta name="keywords" content="gsap,練習" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://assets.codepen.io https://assets.pokemon.com;" />
+
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/test.css" />
+    <script type="module" src="./src/test.ts"></script>
+    <title>gsap</title>
+  </head>
+  <body>
+    <main>
+      <section class="poke" aria-labelledby="poketitle">
+        <h1 id="poketitle">pokedex</h1>
+        <div class="poke__inner">
+          <article class="poke__container">
+            <figure class="poke__silhouette" id="bulbasaur">
+              <div class="poke__cover"></div>
+              <figcaption>フシギダネのイラストとシルエット</figcaption>
+            </figure>
+            <div class="poke__card">
+              <p class="poke__word">Who's</p>
+              <div class="poke__information">
+                <h2 class="poke__title">Bulbasaur</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas a nostrum nobis ipsum dolorum aperiam officia nesciunt
+                  vero iusto recusandae, error, optio neque facere dolor quidem iste consectetur, repellendus repudiandae.
+                </p>
+                <p class="poke__type">Type: <button class="grass">Grass</button> <button class="poison">Poison</button></p>
+              </div>
+            </div>
+          </article>
+          <article class="poke__container">
+            <figure class="poke__silhouette" id="charmander">
+              <div class="poke__cover"></div>
+              <figcaption>人影のイラストとシルエット</figcaption>
+            </figure>
+            <div class="poke__card">
+              <p class="poke__word">That</p>
+              <div class="poke__information">
+                <h2 class="poke__title">Charmander</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit hic, perferendis quidem commodi nostrum cupiditate labore!
+                  Tempora soluta hic corrupti nulla delectus exercitationem quia, voluptates non debitis nam, tenetur officiis!
+                </p>
+                <p class="poke__type">Type: <button class="fire">Fire</button></p>
+              </div>
+            </div>
+          </article>
+          <article class="poke__container">
+            <figure class="poke__silhouette" id="squirtle">
+              <div class="poke__cover"></div>
+              <figcaption>ゼニガメのイラストとシルエット</figcaption>
+            </figure>
+            <div class="poke__card">
+              <p class="poke__word">POKEMON</p>
+              <div class="poke__information">
+                <h2 class="poke__title">Squirtle</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit iste asperiores beatae incidunt veritatis ea consectetur
+                  iusto error soluta, praesentium explicabo esse cupiditate possimus id laborum veniam mollitia fugit eos!
+                </p>
+                <p class="poke__type">Type: <button class="water">Water</button></p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p>
+          アクセシブル・セマンティック面での反省点:
+          <br />各ポケモンカードは独立した情報のまとまりなのでsectionよりarticleが適している。<br />図表、イラスト、写真など自己完結したコンテンツはfigureでいい
+        </p>
+      </section>
+
+      <section class="dialog">
+        <button id="open">開く</button>
+        <dialog id="dialog">
+          <h2>Get Started</h2>
+          <button id="close" aria-label="閉じる"><span aria-hidden="true">✗</span></button>
+        </dialog>
+      </section>
+
+      <section class="practice">
+        <h2>HTML/CSS</h2>
+        <button class="practice__btn">登録</button>
+        <button class="practice__btn practice__btn--danger">削除</button>
+        <p class="a"><a href="#">注意事項</a></p>
+        <p><a href="#">快適</a></p>
+        <div class="column-width">
+          <h2>あああああ</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit sint molestias necessitatibus cupiditate exercitationem natus
+            earum libero, voluptatibus, consectetur similique quaerat aliquam quibusdam veritatis dolorem, quisquam perspiciatis. Dolore,
+            iure tenetur?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam tenetur tempore pariatur fuga in recusandae consequuntur
+            doloribus vel sit expedita distinctio dolores asperiores inventore eius illum praesentium illo, laborum quis!
+          </p>
+          <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus aspernatur nesciunt nemo rem, ipsa impedit? Illum</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum porro quaerat sint aperiam dignissimos, iusto cumque distinctio
+            reprehenderit, illo hic ut, atque ab aut perferendis veritatis accusamus? Ad, beatae impedit.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="item">Home</div>
+          <div class="item">Design</div>
+          <div class="item">About</div>
+        </div>
+      </section>
+
+      <section class="form">
+        <h2>FORM</h2>
+        <form>
+          <label>テキスト<input type="text" /></label>
+          <label>検索<input type="search" /></label>
+          <input type="date" />
+          <input type="month" name="" id="" />
+          <input type="datetime-local" name="" id="" />
+          <input type="text" autocomplete="" />
+        </form>
+        <p contenteditable="true">編集可能テキスト contenteditable属性</p>
+        <p draggable="true">ドラッグ可能テキスト draggable属性</p>
+        <p>hiddenで隠されたテキスト。hidden="until-found"はページ内検索で隠蔽が解除されます</p>
+        <p hidden="until-found">はははははははは</p>
+        <button popovertarget="popover">ボタン</button>
+        <div popover="hint" id="popover">ポップオーバー</div>
+        <p><abbr title="めちゃめちゃイケてる">めちゃイケ</abbr>←略語 abbr要素</p>
+      </section>
+
+      <section class="boxes">
+        <div class="first">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="advanced">
+          ScrollTriggerのsnap
+          <div class="box">
+            <p>資格死角四角</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="batch">
+        <div class="basic">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </section>
+
+      <section class="color-slide">
+        <p class="center">Let's go</p>
+        <div class="purple"><p>purple</p></div>
+        <div class="orange"><p>orange</p></div>
+        <div class="green"><p>green</p></div>
+      </section>
+
+      <section class="number-slide">
+        <div class="panel"><p>one</p></div>
+        <div class="panel"><p>two</p></div>
+        <div class="panel"><p>three</p></div>
+        <div class="panel"><p>four</p></div>
+      </section>
+
+      <section class="horizonal">
+        <div class="horizonal__container">
+          <div class="panel"><p>1</p></div>
+          <div class="panel"><p>2</p></div>
+          <div class="panel"><p>3</p></div>
+          <div class="panel"><p>4</p></div>
+        </div>
+      </section>
+
+      <section class="space"></section>
+    </main>
+    <div class="to-top-btn" aria-live="polite">
+      <a href="#" aria-label="ページの先頭へ戻る" role="button">↑ このボタンはcssで@containerのscroll-stateの機能で透明してます</a>
+    </div>
+  </body>
+</html>
